@@ -8,13 +8,16 @@ class ResaleShop:
 
     """ResaleShop creates a store inventory, and has methods that allow the shop to buy, sell, and refurbish computers."""
     
+    """Constructor"""
     def __init__(self, inventory):
         self.inventory = inventory
 
+    """Allows the shop to buy a computer by adding a new computer to the inventory"""
     def buy(self, comp):
         self.inventory.append(comp)
         return self.inventory
 
+    """Sells a computer by removing the computer from the inventory, given that the computer exists in inventory"""
     def sell(self, comp):
         if comp in self.inventory:
             desc = comp.description
@@ -24,6 +27,7 @@ class ResaleShop:
         else: 
             print(f"{desc} not found. Please select another item to sell.")
 
+    """Updates the price of the computer according to the year made and optionally updates the os, given that the computer is in inventory"""
     def refurbish(self, comp, new_os: Optional[str] = None):
         if comp in self.inventory: # locate the computer
             if int(comp.year_made) < 2000:

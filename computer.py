@@ -10,6 +10,7 @@ class Computer:
 
     """This class creates a computer and its attributes. It also allows the computer to change its price and update its OS"""
 
+    """Constructor"""
     def __init__(self, description, processor_type, hard_drive_capacity, memory, operating_system, year_made, price):
         self.description = description
         self.processor_type = processor_type
@@ -20,10 +21,11 @@ class Computer:
         self.price = price
 
     # What methods will you need?
-
+    """Udate the price by setting a new price int"""
     def update_price(self, new_price:int):
         self.price = new_price
 
+    """Updates the os by setting a new os string"""
     def update_os(self, new_os:str):
         self.operating_system = new_os
     
